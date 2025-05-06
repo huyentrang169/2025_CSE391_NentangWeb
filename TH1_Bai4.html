@@ -5,10 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bài 4</title>
-</head>
-
-<body>
-
+  <script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
   <style>
     h3 {
       margin-bottom: 0px;
@@ -20,20 +17,43 @@
       margin-bottom: 20px;
     }
 
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 5px;
+      vertical-align: top;
+    }
+    th {
+      padding-left: 0px;
+    }
     body {
       font-family: monaco, monospace;
       font-size: 14px;
       margin: 40px;
     }
 
+    .form-label {
+      width: 120px;
+      font-weight: bold;
+      padding-top: 10px;
+    }
+
     .form-row {
       display: flex;
-      align-items: left;
-      margin-bottom: 10px;
+      align-items: center;
+      margin: 10px 20px;
+      gap: 10px;
+    }
+
+    .form-editor {
+      flex: 1;
     }
 
     .form-row label {
-      width: 175px;
+      width: 160px;
       font-weight: bold;
     }
 
@@ -55,6 +75,24 @@
       border-radius: 2px;
     }
 
+    label {
+      display: inline-block;
+      width: 150px;
+    }
+
+    input[type="text"], input[type="email"], select {
+      width: 300px;
+      height: 24px;
+    }
+    .form-row input,
+    .form-row select {
+      flex: 1;
+      max-width: 300px;
+      padding: 4px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
     .form-row input[type="email"] {
       width: 80%;
       border: 2px solid #ccc;
@@ -68,12 +106,102 @@
       gap: 5px;
     }
 
-    .radio-group label {
+    textarea {
+      width: 100%;
+    }
+    .section-title {
+      font-weight: bold;
+      font-size: 1.1em;
+      border-top: 2px solid #000;
+      padding-top: 10px;
+      margin-top: 20px;
+    }
+    .captcha {
+      font-family: 'Courier New', monospace;
+      font-size: 32px;
+      letter-spacing: 5px;
+    }
+    .ckeditor-wrapper {
+      width: 100%;
+      display: flex;
+      gap: 10px;
+    }
+
+    .ckeditor-wrapper textarea {
+      width: 100%;
+      height: 120px;
+    }
+    button {
+      font-family: inherit;
+      font-size: 14px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+    .form-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 20px;
+      border-top: 1px solid #aaa;
+      margin-top: 30px;
+    }
+
+    .nav-buttons {
       display: flex;
       gap: 5px;
-      align-items: left;
     }
-  </style>
+
+    .nav-btn {
+      padding: 5px 10px;
+      border: 1px solid #333;
+      background: #555; 
+      color: white;     
+      font-weight: bold;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 5px;
+    }
+
+    .submit-btn {
+      padding: 5px 15px;
+      border: 1px solid #333;
+      background: #555;
+      font-weight: bold;
+      color: white; 
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    .cancel-btn {
+      padding: 5px 15px;
+      border: 1px solid #333;
+      background: #888;
+      font-weight: bold;
+      color: white;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+
+    .required-note {
+      font-size: 13px;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    </style>
+</head>
+
+
+<body>
   <div class="form-section"> <!-- Basic Infor section -->
     <h3>Basic Info</h3>
     <hr>
@@ -111,6 +239,7 @@
     <div class="form-row">
       <label for="suffix">Suffix</label>
       <input type="text" id="suffix" value="Ms.">
+      <label>(?)</label>
     </div>
 
     <div class="form-row">
@@ -194,21 +323,58 @@
 
     <div class="form-row">
       <label for="notes">Notes</label>
-      <textarea name="notes" cols="155" rows="15"></textarea>
-    </div>
-
-    <div class="form-row">
-      <label for="Prefered">Prefered Shift</label>
-      <div class="radio-group">
-        <label><input type="radio"> Regular</label>
-        <label><input type="radio" checked> Gravy Yard</label>
+      <div class="ckeditor-wrapper">
+        <textarea name="notes" id="notes">
+    Anne has a BA degree in English from St. Lawrence College.
+    She is fluent in French and German.ZZZ
+        </textarea>
       </div>
     </div>
-
+    
     <div class="form-row">
-      <label for="active">Active?</label>
-      <input type="radio" id="active" checked>
-    </div>  
+      <label>Preferred Shift</label>
+      <div class="radio-group">
+        <label><input type="radio" name="shift"> Regular</label>
+        <label><input type="radio" name="shift" checked> Gravy Yard</label>
+      </div>
+    </div>
+    
+    <div class="form-row">
+      <label>Active?</label>
+      <label><input type="checkbox" checked></label>
+    </div>
+    
+    <div class="form-row">
+      <label>Are you human?</label>
+      <div>
+        <div class="captcha">TIDAWO</div>
+        <a href="#">Click to change</a>
+      </div>
+    </div>
+    
+    <div class="form-row">
+      <label></label>
+      <input type="text" style="width: 100%;">
+    </div>
+    <script>
+      CKEDITOR.replace('notes', {
+        height: 120
+      });
+    </script>
+    
   </div>
+  <div class="form-footer">
+    <div class="nav-buttons">
+      <button class="nav-btn">◄</button>
+      <button class="nav-btn">►</button>
+    </div>
+  
+    <div class="action-buttons">
+      <button class="submit-btn">💾 Submit</button>
+      <button class="cancel-btn">❌ Cancel</button>
+    </div>
+  </div>
+  <div class="required-note">* required</div>
+    
 </body>
 </html>
