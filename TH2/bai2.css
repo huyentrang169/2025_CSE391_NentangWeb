@@ -1,0 +1,168 @@
+header{
+    flex-wrap: wrap;
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container ul{
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.header-container ul li{
+    margin: 0 10px;
+}
+.header-container ul li a{
+    text-decoration: none;
+    color: #f4f071;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+}
+#page-logo a{
+    font-family: 'Oleo Script', cursive;
+    text-decoration: none;
+    font-size: 30px;
+    color: #e4ec71;
+}
+
+body{
+    background-color: rgb(112, 226, 220);
+    background-image: url('images/ocean.jpg');
+    background-size: cover;
+}
+
+#hero{
+    height: 150px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#hero-content{
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+}
+
+#hero-content h1{
+    font-size: 30px;
+    margin: 0;
+}
+
+.btn-yellow{
+    background-color: yellow;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+
+
+/* --- Highlights Section --- */
+#highlights {
+    padding: 0px 20px 40px;
+    text-align: center;
+    background-color: rgb(190, 227, 235);
+    margin-top: 100px;
+  }
+  
+  #highlights h2 {
+    padding-top: 20px;
+    font-size: 1.5rem;
+    color: #0a0000;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  }
+  
+  #highlights ul li strong{
+    color: #2f8d6b;
+  }
+
+  #highlights ul li p{
+    color: #535151;
+  }
+  #destinations {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 0;
+  }
+  
+  .destination {
+    overflow: hidden;
+    width: 400px;
+    transition: transform 0.3s ease;
+  }
+
+  .destination img{
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .destination:hover {
+    transform: translateY(-5px);
+  }
+  
+  .destination img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+  
+  .destination-info {
+    padding: 15px 10px;
+  }
+  
+  .city {
+    font-weight: bold;
+    color: #222;
+    margin: 0;
+  }
+  
+  .country {
+    color: #0066cc;
+    margin: 5px 0 0 0;
+  }
+  
+  /* --- Footer Social Links --- */
+  footer {
+    margin-top: 60px;
+    padding: 20px 0;
+    text-align: center;
+    background-color: black;
+  }
+  
+  .social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    align-items: center;
+  }
+  
+  .social-links img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-links img:hover {
+    transform: scale(1.1);
+  }
+  
