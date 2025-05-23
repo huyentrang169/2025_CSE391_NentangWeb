@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Form Đăng Ký với jQuery và AJAX</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>Đăng Ký Tài Khoản</h2>
+
+  <form id="registerForm">
+    <label for="fullname">Họ và tên:</label><br />
+    <input type="text" id="fullname" name="fullname" required /><br /><br />
+
+    <label for="email">Email:</label><br />
+    <input type="email" id="email" name="email" required /><br /><br />
+
+    <label for="password">Mật khẩu:</label><br />
+    <input type="password" id="password" name="password" required /><br /><br />
+
+    <button type="submit">Đăng ký</button>
+  </form>
+
+  <div id="successMessage" style="display:none; margin-top:20px; padding:15px; background:#d4edda; color:#155724; border-radius:5px;">
+    🎉 Đăng ký thành công! Cảm ơn bạn đã đăng ký.
+    <button id="showDetailsBtn" style="margin-left:10px;">Xem chi tiết</button>
+    <div id="details" style="display:none; margin-top:10px; background:#c3e6cb; padding:10px; border-radius:4px;">
+      <h4>Chi tiết đăng ký:</h4>
+      <p><strong>Họ tên:</strong> <span id="detail-fullname"></span></p>
+      <p><strong>Email:</strong> <span id="detail-email"></span></p>
+      <p><strong>Lưu ý:</strong> Mật khẩu đã được bảo mật và không hiển thị.</p>
+      <hr />
+      <p>Hỗ trợ: buithihuyentrang16092005@gmail.com | 0383978602</p>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

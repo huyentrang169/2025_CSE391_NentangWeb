@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.completed span {
+  text-decoration: line-through;
+  color: gray;
+}
+
+#task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+#task-list li span {
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+#task-list li .btn {
+  margin-left: 10px;
+}
+
+#task-list li .btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  color: black;
+  border: none;
+}
+
+.btn-warning:hover {
+  background-color: #b28601;
+}
